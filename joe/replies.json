@@ -1,0 +1,84 @@
+{
+  "replies": [
+    {
+      "question": "how can i accept the payments?",
+      "response": "To accept a payment, enter your  Trade ID in the verification modal that appears when you click 'Verify Payment.' Once verified, you’ll see the transaction details in the tracking section. Click the 'Accept Payment' button to confirm the transaction. If you encounter issues, please visit /support for further assistance."
+    },
+    {
+      "question": "how do i track a transaction?",
+      "response": "To track a transaction, enter your Trade ID in the verification modal. After successful verification, the transaction details will appear in the tracking section on the homepage or in the tracking modal. You can monitor the payment status and accept or cancel the transaction from there."
+    },
+    {
+      "question": "what is dezwire pay?",
+      "response": "Dezwire Pay is a secure platform that enables businesses and individuals to accept cryptocurrency payments seamlessly. It supports multiple cryptocurrencies and provides tools for transaction tracking and verification, connecting you to a global market. Learn more at /about."
+    },
+    {
+      "question": "how do i contact support?",
+      "response": "You’re already in the right place! Type your question here, and we’ll respond promptly. For more complex issues, visit /support to access our help center or submit a ticket."
+    },
+    {
+      "question": "how do i create an account?",
+      "response": "To create an account, click the 'Login' button in the top-right corner of the page and follow the prompts on the /auth-flow page to sign up. You’ll need to provide an email address and create a secure password. Check /support for detailed setup guides."
+    },
+    {
+      "question": "what cryptocurrencies are supported?",
+      "response": "Dezwire Pay supports popular cryptocurrencies like Bitcoin (BTC), Ethereum (ETH), and Tether (USDT). More currencies may be added in the future. Check the 'Live Crypto Prices' section on the homepage for currently supported options."
+    },
+    {
+      "question": "why is my trade id not working?",
+      "response": "If your Trade ID isn’t working, ensure it’s a valid alphanumeric code. Double-check for typos and confirm the code hasn’t expired. If the issue persists, visit /support to contact our team for assistance."
+    },
+    {
+      "question": "how do i cancel a payment?",
+      "response": "To cancel a payment, verify your Trade ID to view the transaction in the tracking section or modal. Then, click the 'Cancel Payment' button. Note that cancelling a payment may have specific conditions depending on the transaction status. Visit /support for more details."
+    },
+    {
+      "question": "is dezwire pay secure?",
+      "response": "Yes, Dezwire Pay uses advanced encryption and secure protocols to protect your transactions and personal data. Always ensure your Trade ID and account details are kept confidential. For more on our security practices, visit /security."
+    },
+    {
+      "question": "how long does it take to process a transaction?",
+      "response": "Transaction processing times depend on the cryptocurrency network and payment method. Typically, payments are processed within minutes, but it may take longer during high network congestion. Check the tracking section for real-time updates on your transaction status."
+    },
+    {
+      "question": "can i use dezwire pay on mobile?",
+      "response": "Absolutely! Dezwire Pay is fully responsive and works on mobile devices. You can access all features, including payment verification and transaction tracking, from your smartphone’s browser. Visit /mobile for tips on optimizing your experience."
+    },
+    {
+      "question": "how do i check my balance?",
+      "response": "Once you’ve verified a Trade ID, your balance will be displayed in the top-right corner of the page (visible after logging in). If you don’t see your balance, ensure you’re logged in via /auth-flow or contact support at /support."
+    },
+    {
+      "question": "what do i do if i forgot my trade id?",
+      "response": "If you’ve lost your Trade ID, check your email or transaction confirmation for the  code. If you still can’t find it, contact our support team at /support with your account details, and we’ll help you recover it."
+    },
+    {
+      "question": "can i accept payments in multiple currencies?",
+      "response": "Yes, Dezwire Pay supports payments in multiple cryptocurrencies, such as BTC, ETH, and USDT. The currency will be displayed in the tracking section once you verify the Trade ID. You can convert funds in your wallet at /wallet."
+    },
+    {
+      "question": "how do i update my payment details?",
+      "response": "To update your payment details, log in via /auth-flow and navigate to your account settings at /account. You can add or modify your preferred payment methods there. For help, visit /support."
+    },
+    {
+      "question": "why is the verification modal not appearing?",
+      "response": "If the verification modal isn’t appearing, ensure you’ve clicked the 'Verify Payment' button or the 'Have a Trade ID?' card. If you’re logged in with a valid Trade ID, the modal may not appear as the tracking section will display instead. Contact /support if the issue persists."
+    },
+    {
+      "question": "how do i withdraw funds?",
+      "response": "To withdraw funds, log in and visit the /wallet page. Select your preferred cryptocurrency and enter your withdrawal details. Processing times vary by currency. Check /support for detailed withdrawal instructions."
+    },
+    {
+      "question": "what are the fees for using dezwire pay?",
+      "response": "Dezwire Pay charges competitive fees for transactions, which vary based on the cryptocurrency and transaction type. For a detailed fee schedule, visit /fees or contact our support team at /support."
+    },
+    {
+      "question": "can i use dezwire pay for international transactions?",
+      "response": "Yes, Dezwire Pay is designed for global transactions, allowing you to accept payments from anywhere in the world using supported cryptocurrencies. Ensure your wallet supports international transfers, and check /support for more details."
+    },
+    {
+      "question": "how do i reset my password?",
+      "response": "To reset your password, go to /auth-flow and click the 'Forgot Password' link. Follow the instructions to receive a reset link via email. If you encounter issues, contact our support team at /support."
+    }
+  ]
+}

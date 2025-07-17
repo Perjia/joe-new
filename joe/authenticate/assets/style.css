@@ -1,0 +1,249 @@
+/* Importing Plus Jakarta Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', sans-serif; /* Apply the font family */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    height: 100vh;
+}
+
+.left-part {
+    height: 100vh;
+    background-color: black;
+    width: 30%;
+    min-width: 3500px;
+}
+
+.right-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1f1f1f;
+    width: 70%;
+}
+
+.logo {
+    height: 34px;
+    width: 34px;
+    margin-top: 7px;
+}
+.paxful {
+    font-size: 14px;
+}
+
+
+header {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 14px 16px 32px;
+}
+
+.left-p {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-section {
+    margin-top: 36px;
+    padding: 32px;
+    
+}
+
+.form-section h2 {
+    color: white;
+    font-size: 32px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 20px; /* Adjust to position the icon within the input */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    cursor: pointer;
+    color: #FFFFFF; /* Set the icon color to white */
+    width: 24px; /* Set a fixed width */
+    height: 24px; /* Set a fixed height */
+}
+
+
+
+.form-section p {
+    color: white;
+    font-size: 12px;
+    color: #9E9E9E;
+    margin-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 32px;
+    color: #9E9E9E;
+}
+
+form label {
+    font-size: 14px;
+}
+
+form input {
+    padding: 18px;
+    margin-top: 6px;
+    border: none; /* Remove all borders */
+    font-size: 16px;
+    border-radius: 16px;
+    color: hsl(0, 0%, 62%);
+    background-color: #161616;
+    outline: none;
+    box-shadow: none; 
+    width: 100%; /* Make input fields full width */
+}
+
+.password-container {
+    position: relative;
+    margin-top: 10px; /* Add space between the label and input */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 20px; /* Adjust to position the icon within the input */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    cursor: pointer;
+    color: white; /* Ensure the icon color is white */
+    font-size: 20px; /* Adjust size as needed */
+}
+
+.form-section a {
+    color: #9E9E9E;
+    font-size: 14px;
+    margin-left: 7px;
+}
+
+.forgot {
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 12px;
+    color: #9E9E9E;
+}
+
+form input[type="submit"] {
+    background-color: hsl(75, 84%, 63%);
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 32px;
+}
+
+.password-label {
+    margin-top: 18px;
+}
+
+
+/* Base styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.left-part {
+    height: 100vh;
+    background-color: black;
+    width: 28%;
+    min-width: 450px;
+}
+
+.right-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1f1f1f;
+    width: 72%;
+}
+
+/* Media Queries */
+@media (max-width: 990px) {
+    .left-part {
+        width: 100%; /* Make the left part take full width */
+        min-width: auto; /* Remove min-width to avoid overflow */
+    }
+
+    .right-part {
+        display: none; /* Hide the right part for widths below 990px */
+    }
+
+    .form-section {
+        margin-top: 56px;
+        padding: 18px;
+        
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 6px;
+        padding: 0px 18px;
+        color: #9E9E9E;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 6px;
+        padding: 0px 18px;
+        color: #9E9E9E;
+    }
+    
+    header {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        padding: 16px 14px 16px 16px;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1024px) {
+    /* Styles for devices between 991px and 1024px */
+    .left-part {
+        width: 30%; /* Adjust width for medium screens */
+    }
+
+    .right-part {
+        width: 70%; /* Adjust width for medium screens */
+        display: flex; /* Ensure the right part is displayed */
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Styles for devices larger than 1024px */
+    .left-part {
+        width: 28%; /* Original width */
+    }
+
+    .right-part {
+        width: 72%; /* Original width */
+        display: flex; /* Ensure the right part is displayed */
+    }
+}

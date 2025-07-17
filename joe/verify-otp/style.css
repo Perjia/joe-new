@@ -1,0 +1,207 @@
+/* Importing Plus Jakarta Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Left Section */
+.reft-part {
+    height: 100vh;
+    background-color: black;
+    width: 28%;
+    min-width: 450px;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+}
+
+.logo {
+    height: 34px;
+    width: 34px;
+}
+
+.left-p {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-section {
+    margin-top: 6px;
+    padding: 32px;
+}
+
+.form-section h2 {
+    color: white;
+    font-size: 32px;
+}
+
+.form-section p {
+    color: #9E9E9E;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+/* Input Styling */
+.input-wrapper {
+    display: flex;
+    justify-content: center; /* Center align the inputs */
+    gap: 5px; /* Default gap between inputs */
+}
+
+.input-wrapper input {
+    height: 80px; /* Increased height */
+    width: 100%; /* Full width */
+    max-width: 70px; /* Increased max-width */
+    border: none;
+    font-size: 24px; /* Increased font size for better visibility */
+    border-radius: 16px;
+    color: hsl(0, 0%, 62%);
+    background-color: #161616;
+    text-align: center;
+    outline: none;
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    outline: 2px solid hsl(75, 84%, 63%);
+    box-shadow: 0 0 5px hsl(75, 84%, 63%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+}
+
+form label {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.back-section {
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+    color: #FFFFFF;
+}
+
+.back-icon {
+    fill: white;
+}
+
+.back-section p {
+    margin-left: 10px;
+    color: white;
+}
+
+/* Right Section */
+.light-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    width: 72%;
+    border-left: 4px solid #161616;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    background-color: limegreen;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 32px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .reft-part {
+        width: 100%;
+        min-width: auto;
+        padding: 10px;
+    }
+
+    .light-part {
+        display: none; /* Hide right section on small screens */
+    }
+
+    .form-section {
+        margin-top: 36px;
+        padding: 12px;
+    }
+
+    .input-wrapper {
+        justify-content: space-between; /* Space between groups of inputs */
+        gap: 8px; /* Adjusted spacing */
+    }
+
+    .input-wrapper input {
+        height: 80px; /* Increased height for mobile */
+        max-width: 80px; /* Increased max-width for mobile */
+    }
+
+
+    .input-wrapper input:nth-child(4) {
+        margin-left: 14px; /* Space before the fourth input */
+    }
+
+    form {
+        padding: 0px 12px;
+    }
+
+    header {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .reft-part {
+        width: 40%;
+    }
+
+    .light-part {
+        width: 60%;
+        display: flex;
+    }
+
+    .input-wrapper input {
+        height: 70px; /* Height for medium screens */
+        max-width: 60px; /* Max-width for medium screens */
+    }
+}
+
+@media (min-width: 1025px) {
+    .reft-part {
+        width: 28%;
+    }
+
+    .light-part {
+        width: 72%;
+        display: flex;
+    }
+}
